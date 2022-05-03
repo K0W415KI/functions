@@ -1,0 +1,26 @@
+public class fibonacci
+        {
+            public static string[] Calcular(long numero)
+            {
+                long anterior, preanterior, actual, siguiente, i;
+                string[] resultado = new string[numero];
+                preanterior = 0;
+                anterior = 0;
+                actual = 1;
+                siguiente = 0;
+
+                for (i = 0; i < numero; i++)
+                {
+                    if (i < 2)
+                    {
+                        resultado[i] = Convert.ToString(i);
+                    }
+                    else
+                    {
+                        siguiente = Convert.ToInt64(resultado[i - 2]) + Convert.ToInt64(resultado[i - 1]);
+                        resultado[i] = Convert.ToString(siguiente);
+                    }
+                }
+                return resultado;
+            }
+        }
